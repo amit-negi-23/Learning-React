@@ -10,6 +10,7 @@ function App() {
         <About/>
         <Page title="About me" content="I am Amit Negi" btn="Hello"/>
         <Page title="Know me" content="I am Rohit" btn="Hi"/>
+        <Page title="About you" content="I am Krishna" btn="Radhe radhe"/>
     </div>
   );
 }
