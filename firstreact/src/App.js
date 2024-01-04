@@ -1,37 +1,36 @@
 import React from "react";
-import { useState } from "react";
-import ChildCompo2 from "./components/ChildCompo2";
-
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Home from "./components/Home";
+import About from "./components/About.js";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
 function App() {
-    const [name , setname] = useState()
-    const [email, setEmail] = useState()
-    const [data, setData] = useState({})
-
-    function handleName(event){
-      setname(event.target.value)
-    }
-
-    function handleEmail(event){
-      setEmail(event.target.value)
-    }
-   function handleSubmit(event){
-    event.preventDefault()
-      console.log(name)
-      console.log(email)
-      setData({name:name, email:email})
-   }
+   
   return (
+    <Router>
     <div className="container">
-           <div>
-              <form onSubmit={handleSubmit}>
-                    <input type="text" name="name" onChange={handleName} placeholder="enter name"/>
-                    <input type="text" name="email" onChange={handleEmail} placeholder="enter email"/>
-                    <button>Submit</button>
-              </form>
-           </div>
-    {/* passing data to child component*/}
-        <ChildCompo2 data ={data}/>
+           <nav className="navbar navbar-expand-lg">
+              <ul className="navbar-nav ">
+                    <li className="nav-item"><Link to="/" className='nav-link'>Home</Link></li>
+                    <li className="nav-item"><Link to="/about" className='nav-link'>About</Link></li>
+                    <li className="nav-item"><Link to="/services" className='nav-link'>Services</Link></li>
+                    <li className="nav-item"><Link to="/contact" className='nav-link'>Contact</Link></li>
+                    <li className="nav-item"><Link to="/notfound" className='nav-link'>Not Found</Link></li>
+
+                    
+              </ul>
+           </nav>
+                    <Routes>
+                          <Route path="/" element={<Home/>}/>
+                          <Route path="/about" element={<About/>}/>
+                          <Route path="/services" element={<Services/>}/>
+                          <Route path="/contact" element={<Contact/>} />
+                          <Route path ="/notfound" element={<NotFound/>}/>
+                    </Routes>
     </div>
+                    
+  </Router>
   );
 }
 
