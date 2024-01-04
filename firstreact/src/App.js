@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 import Page from "./components/Page.js";
 import User from "./User.js";
+import Userx from "./Userx.js"
 function App() {
    
   return (
@@ -45,6 +46,7 @@ function App() {
                           <Route path="/services" element={<Services/>}/>
                           <Route path="/contact" element={<Contact/>} />
                           <Route path="/users/:username" element={<User/>} />
+                          <Route path="/userx/:id/:userxname" element={<Userx/>} />
                           <Route path ="*" element={<NotFound/>}/>
                     </Routes>
     </div>
