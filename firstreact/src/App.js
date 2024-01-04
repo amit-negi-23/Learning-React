@@ -5,6 +5,7 @@ import About from "./components/About.js";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
+import { useParams } from "react-router-dom";
 function App() {
    
   return (
