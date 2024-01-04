@@ -6,7 +6,7 @@ import About from "./components/About.js";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
-import { useParams } from "react-router-dom";
+import Page from "./components/Page.js";
 function App() {
    
   return (
@@ -40,6 +40,7 @@ function App() {
                     <Routes>
                           <Route path="/" element={<Home/>}/>
                           <Route path="/about" element={<About/>}/>
+                          <Route path="/about/:page" element={<Page/>}/>
                           <Route path="/services" element={<Services/>}/>
                           <Route path="/contact" element={<Contact/>} />
                           <Route path ="*" element={<NotFound/>}/>
