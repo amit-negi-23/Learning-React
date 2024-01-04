@@ -1,34 +1,36 @@
 import React from "react";
-import ChildComponent from './components/ChildComponent';
-import DefaultForm from "./components/DefaultForm";
-import Button from "./components/Button";
-import ConditionalComponent from "./components/ConditionalComponent";
+import { useState } from "react";
+import ChildCompo2 from "./components/ChildCompo2";
 
 function App() {
+    const [name , setname] = useState()
+    const [email, setEmail] = useState()
+    const [data, setData] = useState({})
 
-    function handleButton(){
-      console.log("readmore btn clicked")
+    function handleName(event){
+      setname(event.target.value)
     }
-    function handleButton2(){
-      console.log("register btn clicked")
+
+    function handleEmail(event){
+      setEmail(event.target.value)
     }
+   function handleSubmit(event){
+    event.preventDefault()
+      console.log(name)
+      console.log(email)
+      setData({name:name, email:email})
+   }
   return (
     <div className="container">
-            {/* Task1 */}
-            <ChildComponent title='Child component' para="This is a paragraph"/>
-
-            {/* Task2*/}
-            <DefaultForm registered={false}/>
-
-            {/* Task 3*/}
-            <Button title="Readmore" action ={handleButton}/>
-            <Button title="register" action ={handleButton2}/>
-            <Button title="empty btn" />
-           
-           {/* task3*/}
-           <ConditionalComponent condition={false}/>
-
-           
+           <div>
+              <form onSubmit={handleSubmit}>
+                    <input type="text" name="name" onChange={handleName} placeholder="enter name"/>
+                    <input type="text" name="email" onChange={handleEmail} placeholder="enter email"/>
+                    <button>Submit</button>
+              </form>
+           </div>
+    {/* passing data to child component*/}
+        <ChildCompo2 data ={data}/>
     </div>
   );
 }
