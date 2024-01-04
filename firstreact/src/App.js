@@ -16,7 +16,6 @@ function App() {
                     <li className="nav-item"><Link to="/about" className='nav-link'>About</Link></li>
                     <li className="nav-item"><Link to="/services" className='nav-link'>Services</Link></li>
                     <li className="nav-item"><Link to="/contact" className='nav-link'>Contact</Link></li>
-                    <li className="nav-item"><Link to="/notfound" className='nav-link'>Not Found</Link></li>
 
                     
               </ul>
@@ -26,7 +25,7 @@ function App() {
                           <Route path="/about" element={<About/>}/>
                           <Route path="/services" element={<Services/>}/>
                           <Route path="/contact" element={<Contact/>} />
-                          <Route path ="/notfound" element={<NotFound/>}/>
+                          <Route path ="*" element={<NotFound/>}/>
                     </Routes>
     </div>
                     
