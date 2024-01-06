@@ -8,7 +8,7 @@ export default class User extends Component {
         image:props.image,
         name:props.name
       }
-      console.log(props)
+      // console.log(props)
   }
   render() {
     return (

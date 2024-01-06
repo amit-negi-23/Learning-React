@@ -3,6 +3,7 @@ import './App.css'
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import Home from './components/Home'
 import Users from "./components/Users";
+import UserDetail from "./components/UserDetail";
 function App() {
    
   return (
@@ -18,7 +19,9 @@ function App() {
                 <Routes>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/home"} element={<Home/>}/>
-                    <Route path={"/users"} element={<Users/>}/>
+                    <Route exact path={"/users"} element={<Users/>}/>
+                    <Route path={"/users/:id"} element={<UserDetail/>}/>
+
                 </Routes>
           </div>
     </Router>
