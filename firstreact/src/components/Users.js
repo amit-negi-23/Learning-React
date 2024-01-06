@@ -33,6 +33,7 @@ export default class Users extends Component {
                  <h2>Users</h2>
                  <div className='row'>
                     {(this.state.data!=null)?this.state.data.map((item)=><div key={item.id} className='col-md-2 mb-3'><User image={item.image} name={item.firstName + ' '+ item.lastName}/></div>):<div className='display-1'> {this.state.message}</div>}
+                       
                         
                  </div>
         </div>
