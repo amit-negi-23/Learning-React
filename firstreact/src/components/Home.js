@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import SelectOption from './SelectOption'
 
 export default class Home extends Component {
   render() {
     return (
       <div>
         <h2>Home Page</h2>
+        <SelectOption/>
       </div>
     )
   }
